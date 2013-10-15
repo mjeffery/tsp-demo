@@ -3,14 +3,19 @@
   dy = path[i].y - path[j].y
   Math.sqrt dx * dx + dy * dy
 
+# calculates the cost of each path segment and assigns it as a "cost" to the first node
+# returns the sum of the costs
 @calculateCost = (path) ->
   return 0 if path.length <= 1
   cost = path[path.length - 1].cost = dist(path, path.length-1, 0)
   cost += path[i-1].cost = dist(path, i-1, i) for i in [1..path.length - 1]
   return cost
-  
+
+# returns the change in cost
+# precondition: calculateCost has been called on the path
 @try2optSwap = (path, i, j) ->
-  return 0 if path.length <= 3
+  return 0 if path.length <= 3 or i == j
+  return try2optSwap path, j, i if j < i
   dist(path, i, j+1) + dist(path, i-1, j) - path[i-1].cost - path[j].cost
 
 @do2optSwap = (path, i, j) ->
