@@ -33,7 +33,7 @@ module.exports = function(config) {
     ],
 
     // list of files / patterns to exclude
-    exclude: [],
+    exclude: ['.tmp/scripts/workers/solver-worker.js'],
 
     // web server port
     port: 8080,

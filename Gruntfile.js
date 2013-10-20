@@ -222,12 +222,21 @@ module.exports = function (grunt) {
           ]
         }]
       },
+      dist2: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '.tmp',
+          dest: '<%= yeoman.dist %>',
+          src: 'scripts/workers/{,*/}*.js'
+        }]
+      },
       styles: {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
-      }
+      },
     },
     concurrent: {
       server: [
@@ -311,7 +320,8 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'rev',
-    'usemin'
+    'usemin',
+    'copy:dist2'
   ]);
 
   grunt.registerTask('default', [

@@ -32,7 +32,9 @@
   array.slice(i, j-i)
 
 @do2optSwap = (path, i, j) ->
-  beg = Math.max i-1, 0
-  mid = j-i
-  end = path.length - j 
-  path.slice(0, beg).concat path.slice(i, mid).reverse(), path.slice(j, end)
+  return do2optSwap j, i if j < i 
+  newPath = path.slice(0, path.length)
+  return newPath if i == j
+  for ind in [0..j-i]
+    newPath[i+ind] = path[j-ind];
+  return newPath

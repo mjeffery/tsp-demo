@@ -178,7 +178,13 @@ describe '2-Opt Library:', () ->
         {x:10, y:10 },
         {x:10, y: 0 }
       ]
-      expect(do2optSwap path, 0, 1).toEqual expected4
+      expectedPath = [
+        {x: 0, y: 0 },
+        {x: 0, y:10 },
+        {x:10, y:10 },
+        {x:10, y: 0 }
+      ]
+      expect(do2optSwap path, 0, 1).toEqual expectedPath
       
     it 'using the last node', () ->
       path = [
@@ -196,7 +202,7 @@ describe '2-Opt Library:', () ->
         {x:10, y:10 },
         {x: 0, y:10 }
       ] 
-      expect(do2optSwap path, 0, 3).toEqual expected4
+      expect(do2optSwap path, 0, 3).toEqual expected4.reverse()
       
     
       

@@ -2,15 +2,23 @@
   "name": "tsp-demo",
   "version": "0.0.0",
   "description": "A web application that allows the user to create and modify a Traveling Salesman Problem (TSP) and watch it be optimized in real-time",
-	"keywords": ["traveling alesman problem", "tsp", "2-opt", "2opt", "web worker", "canvas", "html5"],
-	"author": {
-		"name": "Mike Jeffery",
-		"email": "michael.jeffery@gmail.com"
-	},
-	"repository": {
-		"type": "git",
-		"url": "http://github/mjeffer/tsp-demo"
-	},
+  "keywords": [
+    "traveling alesman problem",
+    "tsp",
+    "2-opt",
+    "2opt",
+    "web worker",
+    "canvas",
+    "html5"
+  ],
+  "author": {
+    "name": "Mike Jeffery",
+    "email": "michael.jeffery@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github/mjeffer/tsp-demo"
+  },
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
