@@ -1,6 +1,5 @@
 angular.module('tsp-demo')
   .factory 'Solver', () ->
-    
     class Solver 
       constructor: () ->
         @worker = null
@@ -36,7 +35,6 @@ angular.module('tsp-demo')
         else
           listeners = [callback]
           @listeners[event] = listeners
-
         @worker.addEventListener event, callback if @worker?  
         return
 
@@ -45,6 +43,5 @@ angular.module('tsp-demo')
         if listeners?
           idx = listeners.indexOf callback
           listeners.splice idx, 1 if idx >= 0
-        
         @worker.removeEventListener event, callback if @worker? 
         return

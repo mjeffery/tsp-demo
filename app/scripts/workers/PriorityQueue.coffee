@@ -1,4 +1,4 @@
-class PriorityQueue
+class @PriorityQueue
 	constructor: (@comparator = (a,b) ->  a - b ) ->
 		@elements = []
 
@@ -17,12 +17,13 @@ class PriorityQueue
 		return size
 
 	next: ->
-		size = @elements.length
-
-		return null if size is 0
-
 		first = @elements[0]
-		@elements[0] = @elements.pop
+		last = @elements.pop()
+		size = @size()
+
+		return first if size is 0
+
+		@elements[0] = last 
 		current = 0
 		while current < size
 			largest = current
@@ -41,7 +42,7 @@ class PriorityQueue
 
 	size: -> @elements.length
 
-	isEmpty: -> size is 0
+	isEmpty: -> @size() is 0
 
 	compare: (a, b) -> @comparator @elements[a], @elements[b]
 
@@ -49,3 +50,4 @@ class PriorityQueue
 		temp = @elements[b]
 		@elements[b] = @elements[a]
 		@elements[a] = temp
+		return

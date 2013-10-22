@@ -16,7 +16,7 @@ module.exports = function(config) {
 	coffeePreprocessor: {
 		options: {
 			bare: true,
-			sourceMap: false,
+			sourceMap: true,
 		},
 		transformPath: function(path) {
 			return path.replace(/\.js$/, '.coffee');

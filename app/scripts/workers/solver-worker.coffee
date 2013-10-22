@@ -1,6 +1,4 @@
-importScripts 'scripts/2opt.js' 
-
-
+importScripts 'scripts/2opt.js', 'scripts/PriorityQueue.js'
 
 self.addEventListener 'message', (event) ->
 	msg = event.data
@@ -9,8 +7,4 @@ self.addEventListener 'message', (event) ->
 	updateInterval = msg?.options ? 100
 	showSteps = msg?.options ? false
 	iterations = 0
-
-	if points.length <= 3
-		false
-
 
